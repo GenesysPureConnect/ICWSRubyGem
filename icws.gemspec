@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name               = "icws"
-  s.version            = "0.0.1"
+  s.version            = "0.0.2"
   s.default_executable = "icws"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -13,8 +13,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{open source Ruby wrapper around ICWS}
-  s.add_development_dependency "rspec", "~> 2.6"
-  s.add_dependency "rest-client" , "~> 1.6.7"
+  s.add_dependency "rest-client" 
   s.add_dependency "json"
   
   if s.respond_to? :specification_version then

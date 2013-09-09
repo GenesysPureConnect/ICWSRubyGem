@@ -1,7 +1,11 @@
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
-  t.libs << 'test'
+  t.libs << "test"
+    t.test_files = FileList.new('test/**/*.rb')
+    #t.test_files = FileList.new('test/configuration/roles.rb')
+    #t.test_files = FileList.new('test/test_connection.rb')
+    t.verbose = true
 end
 
 desc "Run tests"

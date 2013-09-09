@@ -1,5 +1,2 @@
 TODO:
-Fix Rakefile with your name and contact info
-Add your code to lib/<%= name %>.rb
-
-http://guides.rubygems.org/make-your-own-gem/
+Fix where clause of configuration items

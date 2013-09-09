@@ -1,30 +1,20 @@
 PATH
   remote: .
   specs:
-    icws (0.0.1)
+    icws (0.0.2)
       json
-      rest-client (~> 1.6.7)
+      rest-client
 
 GEM
   remote: http://rubygems.org/
   specs:
-    diff-lcs (1.2.4)
     json (1.8.0)
     mime-types (1.24)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rspec (2.14.1)
-      rspec-core (~> 2.14.0)
-      rspec-expectations (~> 2.14.0)
-      rspec-mocks (~> 2.14.0)
-    rspec-core (2.14.5)
-    rspec-expectations (2.14.2)
-      diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   icws!
-  rspec (~> 2.6)

@@ -8,6 +8,7 @@ require 'icws/configuration/workgroups'
 require 'securerandom'
 
 class RoleTest < Test::Unit::TestCase
+=begin
 
   def test_create_new_get_update_and_delete
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
@@ -48,7 +49,7 @@ class RoleTest < Test::Unit::TestCase
     end
     
   end
-
+=end
   def test_get_all
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD

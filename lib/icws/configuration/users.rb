@@ -6,6 +6,13 @@ class ICWS
       def initialize(connection)
         super(connection,'users')
       end
+      
+      def set_password(user_id, password, force=false)
+        
+         @client.put @uri + '/' + id + '/password', 
+                                        { :password => password,
+                                          :force => force}
+      end
     end
   end
 end

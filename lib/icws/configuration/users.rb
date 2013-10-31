@@ -7,11 +7,13 @@ class ICWS
         super(connection,'users')
       end
       
-      def set_password(user_id, password, force=false)
-        
-         @client.put @uri + '/' + id + '/password', 
-                                        { :password => password,
-                                          :force => force}
+      def set_password(user_id, password, force)
+         icws_uri = @uri + '/' + user_id + '/password'
+         puts 'setting password to ' + password
+         puts 'to: ' + icws_uri
+         @client.put icws_uri, 
+                    { :password => password,
+                      :force => force}
       end
     end
   end

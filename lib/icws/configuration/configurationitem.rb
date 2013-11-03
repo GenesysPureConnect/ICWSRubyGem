@@ -64,7 +64,7 @@ class ICWS
           config_id = {}
           config_id['id'] = id
           config_id['displayName'] = id
-          new_item['configurationId'] = config_id
+          configuration_item['configurationId'] = config_id
         end
         
         @client.put @uri + '/' + id, configuration_item

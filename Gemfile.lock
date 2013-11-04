@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    icws (0.0.2)
+    icws (0.0.3)
       json
       rest-client
 
@@ -9,7 +9,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     json (1.8.0)
-    mime-types (1.24)
+    mime-types (1.25)
     rest-client (1.6.7)
       mime-types (>= 1.16)
 

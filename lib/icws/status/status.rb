@@ -13,7 +13,7 @@ class ICWS
         def all_system_statuses
             status_list = @client.get '/status/status-messages'
             statuses = []
-            status_list['statusMessageList'].each {|s| statuses.push ICWS::StatusMessage.new(s)}
+            status_list['statusMessageList'].each {|s| statuses.push ICWS::Status::StatusMessage.new(s)}
             return statuses
         end
 

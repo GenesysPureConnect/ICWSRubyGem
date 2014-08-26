@@ -1,9 +1,7 @@
 #USERID = 'aeolus_user'
 #SERVER = 'http://Aeolus:8018'
-PASSWORD = '12344321'
-APPLICATIONNAME = 'SalesforceProvisionService'
+PASSWORD = '1234'
+APPLICATIONNAME = 'Unit Tests'
 
 USERID = 'kevin.glinski'
-#SERVER = 'http://morbo:8018'
-SERVER = 'https://sim4integration.inin.com'
-
+SERVER = 'http://morbo:8888'

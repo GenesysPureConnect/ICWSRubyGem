@@ -1,35 +1,35 @@
 require 'test_constants'
-require 'test/unit'
+require 'minitest/autorun'
 
 require 'rubygems'
 require 'icws/connection'
 
-class ConnectionTest < Test::Unit::TestCase
+class ConnectionTest < MiniTest::Unit::TestCase
   def test_connection
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD
-    assert_not_nil connection.cookie                                       
-    assert_not_nil connection.token
-      
+    assert connection.cookie != nil
+    assert connection.token != nil
+
   end
-  
+
   def test_initialize
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
-    assert_not_nil connection.application_name                                       
-    assert_not_nil connection.server
-      
+    assert connection.application_name != nil
+    assert connection.server != nil
+
   end
 
   def test_version
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
-    assert_not_nil connection.version
+    assert connection.version != nil
   end
-  
+
   def test_features
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD
     features = connection.features
-    assert_not_nil features
+    assert features != nil
     assert features.length > 0
   end
 end

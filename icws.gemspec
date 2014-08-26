@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   s.add_dependency "rest-client", "~>0"
   s.add_dependency "json", "~>0"
 
+  s.add_test_dependency 'rake'
+
   if s.respond_to? :specification_version then
     s.specification_version = 3
 

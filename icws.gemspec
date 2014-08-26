@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{open source Ruby wrapper around ICWS}
-  s.add_dependency "rest-client", "~>0"
-  s.add_dependency "json", "~>0"
+  s.add_dependency "rest-client", "1.7.2"
+  s.add_dependency "json", "1.8.1"
 
   s.add_development_dependency 'rake'
 

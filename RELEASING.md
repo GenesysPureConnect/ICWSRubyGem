@@ -11,7 +11,7 @@ bundle install
 rake test
 ```
 
-Check that the last build succeeded in [Travis CI](https://travis-ci.org/tim-vandecasteele/grape-swagger) for all supported platforms.
+Check that the last build succeeded in [Travis CI](https://travis-ci.org/InteractiveIntelligence/ICWSRubyGem) for all supported platforms.
 
 Increment the version, modify [icws.gemspec](icws.gemspec).
 

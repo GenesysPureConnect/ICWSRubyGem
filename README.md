@@ -1,5 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/icws.svg)](http://badge.fury.io/rb/icws)
-
+[![Build Status](https://travis-ci.org/InteractiveIntelligence/ICWSRubyGem.svg)](https://travis-ci.org/InteractiveIntelligence/ICWSRubyGem)
 A gem that wraps up the ICWS ReST api
 
 Examples

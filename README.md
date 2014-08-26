@@ -6,14 +6,19 @@ Examples
 ==============
 
 Making a Connection
+
+``` ruby
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD
+```
 
 Deleting a user:
+``` ruby
     def delete_user(id, connection)
         user_config = ICWS::Configuration::Users.new connection
         user_config.delete URI.escape id
     end
+```
 
 Create a Workgroup:
 
@@ -38,5 +43,8 @@ Create a Workgroup:
 ```
 
 Set a User's Status
+
+``` ruby
     status = ICWS::Status.new connection
     status.set_user_status URI.escape(id), 'AVAILABLE'
+```

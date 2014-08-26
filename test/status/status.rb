@@ -8,6 +8,8 @@ require 'icws/status/status.rb'
 class StatusTest <  MiniTest::Unit::TestCase
 
   def test_get_all_system_statuses
+      skip ("Not running on integration server") if ENV['CI'] == true
+
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD
 
@@ -21,6 +23,8 @@ class StatusTest <  MiniTest::Unit::TestCase
   end
 
   def test_get_allowable_statuses
+      skip ("Not running on integration server") if ENV['CI'] == true
+
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD
 
@@ -36,6 +40,8 @@ class StatusTest <  MiniTest::Unit::TestCase
 
 
   def test_get_user_status
+      skip ("Not running on integration server") if ENV['CI'] == true
+      
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD
 

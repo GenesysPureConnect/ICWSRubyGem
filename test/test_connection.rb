@@ -6,6 +6,7 @@ require 'icws/connection'
 
 class ConnectionTest < MiniTest::Unit::TestCase
   def test_connection
+      skip ("Not running on integration server") if ENV['CI'] == true
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD
     assert connection.cookie != nil
@@ -21,11 +22,13 @@ class ConnectionTest < MiniTest::Unit::TestCase
   end
 
   def test_version
+      skip ("Not running on integration server") if ENV['CI'] == true
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     assert connection.version != nil
   end
 
   def test_features
+      skip ("Not running on integration server") if ENV['CI'] == true
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD
     features = connection.features

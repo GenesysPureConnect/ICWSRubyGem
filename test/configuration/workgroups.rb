@@ -42,7 +42,8 @@ class  MiniTest::Unit::TestCase
   end
 =end
   def test_get_all
-      skip ("Not running on integration server") if ENV['CI'] == true
+      skip ("Not running on integration server") if ENV['CI'] != nil
+
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD
     workgroupconfig = ICWS::Configuration::Workgroups.new connection
@@ -56,7 +57,8 @@ class  MiniTest::Unit::TestCase
   end
 
   def test_get_all_custom_attributes
-      skip ("Not running on integration server") if ENV['CI'] == true
+    skip ("Not running on integration server") if ENV['CI'] != nil
+
 
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD
@@ -73,7 +75,7 @@ class  MiniTest::Unit::TestCase
   end
 
   def test_defaults
-      skip ("Not running on integration server") if ENV['CI'] == true
+    skip ("Not running on integration server") if ENV['CI'] != nil
       
     connection = ICWS::Connection.new APPLICATIONNAME, SERVER
     connection.connect USERID, PASSWORD

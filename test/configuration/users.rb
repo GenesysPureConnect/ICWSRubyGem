@@ -10,73 +10,79 @@ class UserTest <  MiniTest::Unit::TestCase
 
 =begin
 
-  def test_create_new_get_update_and_delete
-    connection = ICWS::Connection.new APPLICATIONNAME, SERVER
-    connection.connect USERID, PASSWORD
-    userconfig = ICWS::Configuration::Users.new connection
+    def test_create_new_get_update_and_delete
+        connection = ICWS::Connection.new APPLICATIONNAME, SERVER
+        connection.connect USERID, PASSWORD
+        userconfig = ICWS::Configuration::Users.new connection
 
-    id = SecureRandom.uuid;
-    ext = Random.new.rand(20000..90000)
+        id = SecureRandom.uuid;
+        ext = Random.new.rand(20000..90000)
 
-    newuser = {}
-    newuser["extension"] = ext
-    newuser['homeSite'] = 1
+        newuser = {}
+        newuser["extension"] = ext
+        newuser['homeSite'] = 1
 
-    userconfig.create_new id, newuser
+        userconfig.create_new id, newuser
 
-    user = userconfig.get id, "configurationId,extension"
-    assert_not_nil user
+        user = userconfig.get id, "configurationId,extension"
+        assert_not_nil user
 
-    assert user["extension"].to_i == ext
+        assert user["extension"].to_i == ext
 
-    ext = ext + 1
-    user["extension"] = ext
-    userconfig.update(id,user)
+        ext = ext + 1
+        user["extension"] = ext
+        userconfig.update(id,user)
 
-    user = userconfig.get id, "configurationId,extension"
-    assert user["extension"].to_i == ext
+        user = userconfig.get id, "configurationId,extension"
+        assert user["extension"].to_i == ext
 
-    userconfig.delete id
-    assert_raise RestClient::ResourceNotFound do
-      user = userconfig.get id
+        userconfig.delete id
+        assert_raise RestClient::ResourceNotFound do
+            user = userconfig.get id
+        end
+
+    end
+=end
+    def test_get_all
+        skip ("Not running on integration server") if ENV['CI'] != nil
+
+        connection = ICWS::Connection.new APPLICATIONNAME, SERVER
+        connection.connect USERID, PASSWORD
+        userconfig = ICWS::Configuration::Users.new connection
+        assert userconfig != nil
+
+        allusers = userconfig.get_all
+
+        assert allusers != nil
+        assert allusers.length > 0
+        assert allusers[0]["configurationId"] != nil
     end
 
-  end
-=end
-  def test_get_all
-    connection = ICWS::Connection.new APPLICATIONNAME, SERVER
-    connection.connect USERID, PASSWORD
-    userconfig = ICWS::Configuration::Users.new connection
-    assert userconfig != nil
+    def test_get_all_custom_attributes
+        skip ("Not running on integration server") if ENV['CI'] != nil
 
-    allusers = userconfig.get_all
+        connection = ICWS::Connection.new APPLICATIONNAME, SERVER
+        connection.connect USERID, PASSWORD
+        userconfig = ICWS::Configuration::Users.new connection
+        assert userconfig != nil
 
-    assert allusers != nil
-    assert allusers.length > 0
-    assert allusers[0]["configurationId"] != nil
-  end
+        allusers = userconfig.get_all "configurationId,extension"
 
-  def test_get_all_custom_attributes
-    connection = ICWS::Connection.new APPLICATIONNAME, SERVER
-    connection.connect USERID, PASSWORD
-    userconfig = ICWS::Configuration::Users.new connection
-    assert userconfig != nil
+        assert allusers != nil
+        assert allusers.length > 0
+        assert allusers[0]["configurationId"] != nil
+        assert allusers[0].has_key? "extension"
+        assert allusers[0].has_key?("foo") == false
+    end
 
-    allusers = userconfig.get_all "configurationId,extension"
+    def test_defaults
+        skip ("Not running on integration server") if ENV['CI'] != nil
 
-    assert allusers != nil
-    assert allusers.length > 0
-    assert allusers[0]["configurationId"] != nil
-    assert allusers[0].has_key? "extension"
-    assert allusers[0].has_key?("foo") == false
-  end
-
-  def test_defaults
-    connection = ICWS::Connection.new APPLICATIONNAME, SERVER
-    connection.connect USERID, PASSWORD
-    userconfig = ICWS::Configuration::Users.new connection
-    assert userconfig != nil
-    assert userconfig.defaults != nil
-  end
+        connection = ICWS::Connection.new APPLICATIONNAME, SERVER
+        connection.connect USERID, PASSWORD
+        userconfig = ICWS::Configuration::Users.new connection
+        assert userconfig != nil
+        assert userconfig.defaults != nil
+    end
 
 end

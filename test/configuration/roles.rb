@@ -10,9 +10,6 @@ require 'securerandom'
 class RoleTest <  MiniTest::Unit::TestCase
 
     def test_get_all
-        puts "envar"
-        puts ENV['CI']
-
         skip ("Not running on integration server") if ENV['CI'] != nil
 
         connection = ICWS::Connection.new APPLICATIONNAME, SERVER
@@ -28,7 +25,7 @@ class RoleTest <  MiniTest::Unit::TestCase
     end
 
     def test_get_all_custom_attributes
-        skip ("Not running on integration server") if ENV['CI'] == true
+        skip ("Not running on integration server") if ENV['CI'] != nil
 
         connection = ICWS::Connection.new APPLICATIONNAME, SERVER
         connection.connect USERID, PASSWORD
@@ -45,7 +42,7 @@ class RoleTest <  MiniTest::Unit::TestCase
     end
 
     def test_defaults
-        skip ("Not running on integration server") if ENV['CI'] == true
+        skip ("Not running on integration server") if ENV['CI'] != nil
 
         connection = ICWS::Connection.new APPLICATIONNAME, SERVER
         connection.connect USERID, PASSWORD

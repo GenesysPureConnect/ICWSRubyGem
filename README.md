@@ -1,7 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/icws.svg)](http://badge.fury.io/rb/icws)
 
-== ICWSgem
-
 A gem that wraps up the ICWS ReST api
 
 Examples
@@ -18,6 +16,8 @@ Deleting a user:
     end
 
 Create a Workgroup:
+
+``` ruby
   def setup_workgroup(workgroup_name, extension, connection)
     workgroup_config = ICWS::Configuration::Workgroups.new connection
     workgroups = workgroup_config.get_all.select {|r| r['configurationId']['id'] == workgroup_name}
@@ -35,6 +35,7 @@ Create a Workgroup:
       workgroup_config.create_new workgroupId, new_workgroup
     end
   end
+```
 
 Set a User's Status
     status = ICWS::Status.new connection

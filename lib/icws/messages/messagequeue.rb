@@ -32,9 +32,8 @@ class ICWS
         end
 
         #register for a new message type.
-        # @param id [String] ID of the configuration item.
-    # @param &block [&block] Block to call when a message of that type is received.
-
+        # @param messageType [String] The type of messages to receive notifications for.
+        # @param block [&block] Block to call when a message of that type is received.
         def register(messageType, &block)
             if(@message_handlers[messageType] == nil)
                 @message_handlers[messageType] = EventHandlerArray.new

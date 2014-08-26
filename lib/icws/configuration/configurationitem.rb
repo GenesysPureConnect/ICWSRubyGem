@@ -60,7 +60,7 @@ class ICWS
 
             # Updates an existing configuration item.
             # @param id [String] Id of the item.
-            # @param new_item [Hash] Object with the configuration properties of the new item.  See ICWS documentation for the valid properties.
+            # @param configuration_item [Hash] Object with the configuration properties of the new item.  See ICWS documentation for the valid properties.
             def update(id, configuration_item)
                 if configuration_item['configurationId'].nil?
                     config_id = {}

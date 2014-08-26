@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/icws.svg)](http://badge.fury.io/rb/icws)
+
 == ICWSgem
 
 A gem that wraps up the ICWS ReST api

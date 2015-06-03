@@ -83,7 +83,7 @@ class ICWS
         # Returns the base uri to the server, including the session id
         # @return [String] The base url with session id.
         def base_uri
-            @server+'/icws/' + @session_id 
+            @server+'/icws/' + @session_id
         end
     end
 end

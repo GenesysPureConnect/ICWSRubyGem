@@ -32,7 +32,18 @@ class ICWS
         #
         def post(url, body, headers={})
             begin
-                JSON.parse @http_resource[url].post body.to_json, headers
+                result = nil
+                if body != nil
+                    result =  @http_resource[url].post body.to_json, headers
+                else
+                    result = @http_resource[url].post "", headers
+                end
+
+                if(result != nil && result != '')
+                    JSON.parse result
+                else
+                    return nil
+                end
             rescue => e
                 puts e.inspect
                 throw e

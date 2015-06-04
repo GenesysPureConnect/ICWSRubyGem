@@ -1,13 +1,12 @@
 Gem::Specification.new do |s|
   s.name               = "icws"
-  s.version = "2.2.1"
+  s.version = "2.2.2"
   s.default_executable = "icws"
   s.date    = Date.today.to_s
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kevin Glinski"]
   s.licenses = ['MPLv2']
-  s.date = %q{2013-08-22}
   s.description = %q{Ruby wrapper around ICWS}
   s.email = %q{kevin.glinski@inin.com}
   s.files = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.md", "RAKEFILE"]

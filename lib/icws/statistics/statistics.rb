@@ -1,5 +1,5 @@
-require '../lib/messages/messagesubscriber.rb'
-require '../lib/statistics/statisticcategory.rb'
+require 'icws/messages/messagesubscriber.rb'
+require 'icws/statistics/statisticcategory.rb'
 
 class ICWS
     #Subscribes to Statistics from CIC

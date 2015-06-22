@@ -1,10 +1,10 @@
-require '..\lib\connection.rb'
-require '..\lib\messages\messagequeue.rb'
-require '..\lib\statistics\statistics.rb'
-require '..\lib\status\status.rb'
-require '..\lib\configuration\users.rb'
-require '..\lib\configuration\workgroups.rb'
-require '..\lib\INTERNAL\challangemessagehandler.rb'
+require '../lib/connection.rb'
+require '../lib/messages/messagequeue.rb'
+require '../lib/statistics/statistics.rb'
+require '../lib/status/status.rb'
+require '../lib/configuration/users.rb'
+require '../lib/configuration/workgroups.rb'
+require '../lib/INTERNAL/challangemessagehandler.rb'
 
 
 def colorize(text, color_code)
@@ -24,7 +24,7 @@ connection = ICWS::Connection.new 'SalesforceProvisionService', 'http://Aeolus:8
 #connection = ICWS::Connection.new 'SalesforceProvisionService', 'http://morbo.dev2000.com:8018'
 
 puts connection.version.inspect
-puts connection.features.inspect 
+puts connection.features.inspect
 
 userId = 'aeolus_user'
 #userId = 'kevin.glinski'
@@ -47,10 +47,10 @@ def status_test(connection, userId)
   status = ICWS::Status.new connection
   statuses = status.all_system_statuses
   puts status.get_user_status userId
-  status.set_user_status userId, statuses[3].statusId 
+  status.set_user_status userId, statuses[3].statusId
   puts status.get_user_status userId
   status.set_user_status userId, statuses[4].statusId
-  
+
   puts status.allowable_statuses userId
 end
 
@@ -66,7 +66,7 @@ def configuration_test (connection)
     workgroup[:notes] = 'test notes'
     workgroups.update 'KPG', workgroup
     puts workgroups.get 'KPG', 'notes'
-    
+
     workgroups.delete 'KPG'
     puts workgroups.get_all
 end

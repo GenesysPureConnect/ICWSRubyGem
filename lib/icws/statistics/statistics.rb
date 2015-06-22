@@ -3,7 +3,7 @@ require 'icws/statistics/statisticcategory.rb'
 
 class ICWS
     #Subscribes to Statistics from CIC
-    class Statistics < MessageSubscriber
+    class Statistics < ICWS::Messages::MessageSubscriber
         #Hash of Statistics catalogs
         attr_reader :statistic_catalog
 

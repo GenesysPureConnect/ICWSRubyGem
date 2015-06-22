@@ -1,4 +1,4 @@
-require '..\lib\statistics\statisticdefinition.rb'
+require '../lib/statistics/statisticdefinition.rb'
 
 class ICWS
     #Defines a category for supervisor statistics

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    icws (2.2.1)
+    icws (2.3)
       json (= 1.8.1)
       rest-client (= 1.7.2)
 

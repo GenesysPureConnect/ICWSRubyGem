@@ -4,4 +4,4 @@ PASSWORD = '1234'
 APPLICATIONNAME = 'Unit Tests'
 
 USERID = 'kevin.glinski'
-SERVER = 'http://morbo:8888'
+SERVER = 'http://morbo.dev2000.com:8018'

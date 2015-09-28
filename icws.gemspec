@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name               = "icws"
-  s.version = "2.2.2"
+  s.version = "2.3"
   s.default_executable = "icws"
   s.date    = Date.today.to_s
 

@@ -17,13 +17,14 @@ class ICWS
         # Connects to the server
         # @param user [String] the name of the user to connect with
         # @param password [String] the password for the user
-        def connect(user, password)
+        def connect(user, password, extraParam='x-icws', extraValue='')
             connectResponse = RestClient.post @server +'/icws/connection',
             {
                 '__type' => "urn:inin.com:connection:icAuthConnectionRequestSettings",
                 :applicationName => @application_name,
                 :userID => user,
-                :password => password
+                :password => password,
+                extraParam => extraValue
             }.to_json,
             :content_type => :json,
             :accept => :json,

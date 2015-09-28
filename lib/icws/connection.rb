@@ -17,7 +17,11 @@ class ICWS
         # Connects to the server
         # @param user [String] the name of the user to connect with
         # @param password [String] the password for the user
-        def connect(user, password, extraParam='x-icws', extraValue='')
+        def connect(user, password, extraParam, extraValue)
+            if extraPram == nil || extraParam == ''
+                extraParam = "x-icws"
+            end
+                
             connectResponse = RestClient.post @server +'/icws/connection',
             {
                 '__type' => "urn:inin.com:connection:icAuthConnectionRequestSettings",
